@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primitivo Grill — Wagyu & Dry-Aged Steakhouse | Malta</title>
+<meta name="description" content="Bold flavours, rugged vibes, refined taste. Premium Wagyu & Dry-Aged Steakhouse in St. Julian's, Malta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Anybody:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   PRIMITIVO GRILL — DARK LUXURY STEAKHOUSE
+   ═══════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #080808;
+  --black-warm: #0c0a09;
+  --charcoal: #1a1714;
+  --charcoal-light: #2a2520;
+  --ember: #c8944a;
+  --gold: #d4a853;
+  --gold-dim: rgba(212, 168, 83, 0.15);
+  --gold-glow: rgba(212, 168, 83, 0.08);
+  --amber: #e8a849;
+  --copper: #b87333;
+  --cream: #f5efe6;
+  --cream-dim: rgba(245, 239, 230, 0.7);
+  --cream-faint: rgba(245, 239, 230, 0.4);
+  --smoke: rgba(245, 239, 230, 0.12);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Garamond, serif;
+  --font-mono: 'Anybody', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav.scrolled {
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.nav-reserve {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: all 0.4s ease;
+}
+
+.nav-reserve:active {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (hover: hover) {
+  .nav-reserve:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1.5rem 3.5rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 80%, rgba(200, 148, 74, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 30% 70%, rgba(184, 115, 51, 0.1), transparent),
+    radial-gradient(ellipse 100% 60% at 70% 100%, rgba(232, 168, 73, 0.08), transparent),
+    linear-gradient(180deg, var(--black) 0%, var(--black-warm) 40%, #1a130a 100%);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(0deg, var(--black) 0%, transparent 100%);
+}
+
+/* Ember particles */
+.ember-field {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ember {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: ember-rise linear infinite;
+}
+
+@keyframes ember-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 200;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-reveal 1s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: hero-reveal 1.2s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-title-line {
+  display: block;
+  font-size: clamp(4rem, 15vw, 8rem);
+}
+
+.hero-title-line:nth-child(2) {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold);
+  font-size: clamp(3.2rem, 12vw, 6.5rem);
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--cream-faint);
+  margin-top: 1.2rem;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-reveal 1s 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-reveal 1s 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: all 0.4s ease;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .hero-cta:hover::before {
+    transform: translateX(0);
+  }
+  .hero-cta:hover {
+    color: var(--black);
+  }
+}
+
+.hero-cta span {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-cta svg {
+  position: relative;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .hero-cta:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: hero-reveal 1s 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-scroll span {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  writing-mode: vertical-rl;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--gold), transparent);
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.3; height: 40px; }
+  50% { opacity: 1; height: 55px; }
+}
+
+@keyframes hero-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══ SECTION COMMON ═══ */
+.section {
+  padding: 5rem 1.5rem;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* Gold separator */
+.gold-sep {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 3rem 0;
+}
+
+/* ═══ ABOUT ═══ */
+.about {
+  background: var(--black-warm);
+  overflow: hidden;
+}
+
+.about-text {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  max-width: 600px;
+}
+
+.about-text em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.about-stat {
+  padding: 1.5rem;
+  border: 1px solid var(--gold-dim);
+  position: relative;
+}
+
+.about-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.about-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  margin-top: 0.5rem;
+}
+
+.about-quote {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-left: 2px solid var(--gold);
+  background: var(--gold-glow);
+}
+
+.about-quote p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cream);
+}
+
+.about-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-style: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ═══ DIVIDER ═══ */
+.divider {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.divider-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream-faint);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.divider-text span {
+  color: var(--gold);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(180deg, transparent, var(--gold-dim));
+}
+
+.divider::before { top: 0; }
+.divider::after {
+  bottom: 0;
+  background: linear-gradient(0deg, transparent, var(--gold-dim));
+}
+
+/* ═══ MENU ═══ */
+.menu {
+  background: var(--black);
+  position: relative;
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: radial-gradient(ellipse 80% 100% at 50% 0%, var(--gold-glow), transparent);
+  pointer-events: none;
+}
+
+.menu-category {
+  margin-bottom: 4rem;
+}
+
+.menu-category-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gold-dim);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.menu-category-num {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.menu-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(245, 239, 230, 0.05);
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) {
+  .menu-item:hover {
+    padding-left: 0.75rem;
+    border-bottom-color: var(--gold-dim);
+  }
+}
+
+.menu-item-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: 0.01em;
+}
+
+.menu-item-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--cream-faint);
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.menu-item-tag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--gold-dim);
+}
+
+/* ═══ EXPERIENCE ═══ */
+.experience {
+  background: var(--charcoal);
+  overflow: hidden;
+}
+
+.experience-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.exp-card {
+  position: relative;
+  padding: 2rem;
+  background: var(--black-warm);
+  border: 1px solid var(--gold-dim);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold-glow), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (hover: hover) {
+  .exp-card:hover::before {
+    opacity: 1;
+  }
+}
+
+.exp-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-card-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1;
+}
+
+.exp-card-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-card-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══ GALLERY ═══ */
+.gallery {
+  background: var(--black);
+  padding: 5rem 0;
+}
+
+.gallery .section-label,
+.gallery .section-title {
+  padding: 0 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item:nth-child(1) {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .gallery-item:hover .gallery-placeholder {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-placeholder.gp-1 {
+  background: linear-gradient(135deg, #1a1008, #2a1a0a 30%, #3d2511 60%, #1a0f06);
+}
+.gallery-placeholder.gp-2 {
+  background: linear-gradient(160deg, #0f0a06, #2a1a0a 40%, #1a100a);
+}
+.gallery-placeholder.gp-3 {
+  background: linear-gradient(200deg, #1a1510, #301e10 50%, #0f0a06);
+}
+.gallery-placeholder.gp-4 {
+  background: linear-gradient(135deg, #0d0906, #251508 40%, #1a0f08);
+}
+.gallery-placeholder.gp-5 {
+  background: linear-gradient(180deg, #1a1208, #2a180a 50%, #0f0906);
+}
+
+.gallery-item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(0deg, rgba(8,8,8,0.8), transparent);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+/* ═══ REVIEWS ═══ */
+.reviews {
+  background: var(--black-warm);
+  overflow: hidden;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.reviews-ratings {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--gold-dim);
+  background: var(--gold-glow);
+}
+
+.rating-badge-score {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.rating-badge-source {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+.rating-badge-stars {
+  color: var(--gold);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.review-card {
+  padding: 2rem;
+  border: 1px solid var(--gold-dim);
+  margin-bottom: 1.5rem;
+  background: rgba(26, 23, 20, 0.5);
+  position: relative;
+}
+
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold-dim);
+  line-height: 1;
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--cream-dim);
+  font-style: italic;
+}
+
+.review-author {
+  margin-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.review-source {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+  color: var(--cream-faint);
+  margin-top: 0.2rem;
+}
+
+/* ═══ RESERVE ═══ */
+.reserve {
+  background: var(--charcoal);
+  text-align: center;
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.reserve::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200, 148, 74, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184, 115, 51, 0.06), transparent);
+  pointer-events: none;
+}
+
+.reserve-content {
+  position: relative;
+  z-index: 1;
+}
+
+.reserve .section-label {
+  justify-content: center;
+}
+
+.reserve .section-label::before {
+  display: none;
+}
+
+.reserve .section-title {
+  font-size: clamp(2.6rem, 9vw, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.reserve-sub {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--cream-faint);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.reserve-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 1.15rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.reserve-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .reserve-cta:hover::before {
+    transform: translateX(0);
+  }
+}
+
+.reserve-cta span,
+.reserve-cta svg {
+  position: relative;
+  z-index: 1;
+}
+
+.reserve-cta svg {
+  width: 14px;
+  height: 14px;
+}
+
+.reserve-info {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.reserve-info-block {
+  text-align: center;
+}
+
+.reserve-info-label {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.reserve-info-value {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+/* Map embed placeholder */
+.reserve-map {
+  margin-top: 3rem;
+  aspect-ratio: 16/9;
+  max-height: 280px;
+  width: 100%;
+  border: 1px solid var(--gold-dim);
+  overflow: hidden;
+  position: relative;
+}
+
+.reserve-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(1) invert(1) contrast(0.9) brightness(0.5) sepia(0.4);
+}
+
+/* ═══ FOOTER ═══ */
+.footer {
+  background: var(--black);
+  padding: 3rem 1.5rem 2rem;
+  border-top: 1px solid var(--gold-dim);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream-faint);
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-link {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  transition: color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .footer-link:hover {
+    color: var(--gold);
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer-social a svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--cream-faint);
+  transition: fill 0.3s ease;
+}
+
+@media (hover: hover) {
+  .footer-social a:hover {
+    border-color: var(--gold);
+    background: var(--gold-glow);
+  }
+  .footer-social a:hover svg {
+    fill: var(--gold);
+  }
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(245, 239, 230, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+  color: var(--cream-faint);
+}
+
+.footer-hashtag {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (min-width: 640px) {
+  .section {
+    padding: 6rem 3rem;
+  }
+
+  .hero {
+    padding: 3rem 3rem 5rem;
+  }
+
+  .nav {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .gallery .section-label,
+  .gallery .section-title {
+    padding: 0 3rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .gallery-item:nth-child(1) {
+    grid-column: span 2;
+    aspect-ratio: 4/3;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reserve-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    padding: 4rem 3rem 2.5rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .section {
+    padding: 8rem 5rem;
+  }
+
+  .hero {
+    padding: 4rem 5rem 6rem;
+  }
+
+  .nav {
+    padding: 1.75rem 3.5rem;
+  }
+
+  .hero-title-line {
+    font-size: clamp(5rem, 10vw, 9rem);
+  }
+
+  .hero-title-line:nth-child(2) {
+    font-size: clamp(4rem, 8vw, 7.5rem);
+  }
+
+  .about-text {
+    font-size: 1.45rem;
+  }
+
+  .menu {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8rem 3rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery .section-label,
+  .gallery .section-title {
+    padding: 0 5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+
+  .gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+
+  .reviews {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .reserve {
+    padding: 8rem 3rem;
+  }
+
+  .footer {
+    padding: 5rem 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 0 4rem;
+  }
+
+  .footer-brand { grid-column: 1; }
+  .footer-tagline { grid-column: 1; }
+  .footer-links { grid-column: 1; grid-row: 3; }
+  .footer-social {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: start;
+    justify-self: end;
+  }
+  .footer-bottom {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+  }
+}
+
+/* Smooth loading */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loader-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Page loader -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-text">Primitivo</div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">Primitivo</div>
+  <a href="https://eatapp.co/reserve/primitivo-grill-33-triq-paceville-33-saint-julian-s-island-of-malta-stj1012-malta" target="_blank" rel="noopener" class="nav-reserve">Reserve</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="ember-field" id="emberField"></div>
+  <div class="hero-content">
+    <p class="hero-tagline">Wagyu & Dry-Aged Steakhouse — St. Julian's, Malta</p>
+    <h1 class="hero-title">
+      <span class="hero-title-line">Primitivo</span>
+      <span class="hero-title-line">Grill</span>
+    </h1>
+    <p class="hero-sub">Bold flavours, rugged vibes, refined taste.</p>
+    <a href="https://eatapp.co/reserve/primitivo-grill-33-triq-paceville-33-saint-julian-s-island-of-malta-stj1012-malta" target="_blank" rel="noopener" class="hero-cta">
+      <span>Reserve Your Table</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section about" id="about">
+  <div class="section-label reveal">
+    Our Story
+  </div>
+  <h2 class="section-title reveal reveal-delay-1">Where Fire<br>Meets Craft</h2>
+  <p class="about-text reveal reveal-delay-2">
+    Primitivo is not just a steakhouse — it's an <em>experience carved in flame</em>. In the heart of St. Julian's, we honour the primal art of fire-cooked cuisine. Premium Japanese Wagyu, hand-selected dry-aged cuts, and an open kitchen where every sear, every flame, every plate tells a story.
+  </p>
+  <p class="about-text reveal reveal-delay-3" style="margin-top: 1.2rem;">
+    Our philosophy is simple: <em>bold flavours, zero pretension</em>. Every dish is crafted with obsessive attention, from the first char to the final garnish. This is meat, elevated.
+  </p>
+
+  <div class="about-stats reveal reveal-delay-4">
+    <div class="about-stat">
+      <div class="about-stat-num">4.7★</div>
+      <div class="about-stat-label">Google · 424 reviews</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">4.8★</div>
+      <div class="about-stat-label">TripAdvisor · 447 reviews</div>
+    </div>
+  </div>
+
+  <div class="about-quote reveal reveal-delay-5">
+    <p>"The best steak I have ever had in my life. The Wagyu melted on my tongue. This place is pure magic."</p>
+    <cite>— Google Review, 5 Stars</cite>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider reveal">
+  <p class="divider-text">"Every cut has a story.<br><span>We let the fire tell it.</span>"</p>
+</div>
+
+<!-- Menu -->
+<section class="section menu" id="menu">
+  <div class="section-label reveal">The Menu</div>
+  <h2 class="section-title reveal reveal-delay-1">Crafted<br>with Fire</h2>
+
+  <div class="menu-category reveal reveal-delay-2">
+    <div class="menu-category-title">
+      Starters
+      <span class="menu-category-num">01</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Beef Tartare</div>
+      <div class="menu-item-desc">Hand-cut prime beef, egg yolk, capers, shallot, house dressing</div>
+      <span class="menu-item-tag">Signature</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Wild Boar Meatballs</div>
+      <div class="menu-item-desc">Slow-braised wild boar, caramelised onion, rustic sauce</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Fried Calamari</div>
+      <div class="menu-item-desc">Crispy rings, lemon zest, garlic aioli</div>
+    </div>
+  </div>
+
+  <div class="menu-category reveal reveal-delay-2">
+    <div class="menu-category-title">
+      Mains — The Grill
+      <span class="menu-category-num">02</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Japanese Wagyu</div>
+      <div class="menu-item-desc">A5 grade, exquisite marbling, served with seasonal accompaniments</div>
+      <span class="menu-item-tag">Premium</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Dry-Aged Ribeye</div>
+      <div class="menu-item-desc">28-day aged, intense depth of flavour, bone-in option available</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">T-Bone</div>
+      <div class="menu-item-desc">The classic, two steaks in one — fillet and sirloin on the bone</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Prime Fillet</div>
+      <div class="menu-item-desc">The tenderest cut, centre-cut, char-grilled to your preference</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Dry Spanish Cut</div>
+      <div class="menu-item-desc">Iberian heritage, dry-aged with Mediterranean character</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Guancialini di Maiale</div>
+      <div class="menu-item-desc">Braised pork cheeks, falling apart tender, rich glaze</div>
+    </div>
+  </div>
+
+  <div class="menu-category reveal reveal-delay-2">
+    <div class="menu-category-title">
+      Desserts
+      <span class="menu-category-num">03</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Tiramisu — Live</div>
+      <div class="menu-item-desc">Prepared tableside by our team, a theatrical finish to your evening</div>
+      <span class="menu-item-tag">Signature Experience</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Parfait</div>
+      <div class="menu-item-desc">Seasonal flavours, layered textures, delicate presentation</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Panna Cotta</div>
+      <div class="menu-item-desc">Silky vanilla custard, fruit coulis, fresh berries</div>
+    </div>
+  </div>
+
+  <div class="menu-category reveal reveal-delay-2">
+    <div class="menu-category-title">
+      Wine & Drinks
+      <span class="menu-category-num">04</span>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Curated Wine Selection</div>
+      <div class="menu-item-desc">Italian, French, and New World bottles, hand-picked to complement our grill</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-name">Cordials & Digestifs</div>
+      <div class="menu-item-desc">A refined close — grappa, amaro, limoncello, and more</div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="section experience" id="experience">
+  <div class="section-label reveal">The Experience</div>
+  <h2 class="section-title reveal reveal-delay-1">More Than<br>a Meal</h2>
+
+  <div class="experience-grid">
+    <div class="exp-card reveal reveal-delay-2">
+      <div class="exp-card-icon">
+        <svg viewBox="0 0 48 48"><path d="M24 4c-2 8-10 14-10 24a10 10 0 0020 0C34 18 26 12 24 4z"/><path d="M24 38v-8M20 34h8"/></svg>
+      </div>
+      <h3 class="exp-card-title">Open Kitchen</h3>
+      <p class="exp-card-text">Watch your steak being crafted through our floor-to-ceiling glass kitchen. Every sear, every flame — theatre you can taste.</p>
+    </div>
+
+    <div class="exp-card reveal reveal-delay-3">
+      <div class="exp-card-icon">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="12"/><path d="M16 36h16M12 40h24M20 32h8"/></svg>
+      </div>
+      <h3 class="exp-card-title">Live Tiramisu</h3>
+      <p class="exp-card-text">Our signature finale. Prepared fresh at your table with flair — layers of mascarpone, espresso, and pure theatre.</p>
+    </div>
+
+    <div class="exp-card reveal reveal-delay-4">
+      <div class="exp-card-icon">
+        <svg viewBox="0 0 48 48"><path d="M8 40l8-16 8 10 8-20 8 26"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <h3 class="exp-card-title">The Team</h3>
+      <p class="exp-card-text">Liz, Niko, Daniel and our crew don't just serve — they create your evening. Warm, knowledgeable, and unforgettable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="section-label reveal">Gallery</div>
+  <h2 class="section-title reveal reveal-delay-1">A Glimpse<br>Inside</h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder gp-1"></div>
+      <div class="gallery-item-label">The Open Kitchen</div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-1">
+      <div class="gallery-placeholder gp-2"></div>
+      <div class="gallery-item-label">Wagyu Selection</div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-2">
+      <div class="gallery-placeholder gp-3"></div>
+      <div class="gallery-item-label">Live Tiramisu</div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-3">
+      <div class="gallery-placeholder gp-4"></div>
+      <div class="gallery-item-label">Dry-Aged Cuts</div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-4">
+      <div class="gallery-placeholder gp-5"></div>
+      <div class="gallery-item-label">The Atmosphere</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section reviews" id="reviews">
+  <div class="section-label reveal">What They Say</div>
+  <h2 class="section-title reveal reveal-delay-1">Voices<br>from the Table</h2>
+
+  <div class="reviews-ratings reveal reveal-delay-2">
+    <div class="rating-badge">
+      <span class="rating-badge-score">4.7</span>
+      <div>
+        <div class="rating-badge-stars">★★★★★</div>
+        <div class="rating-badge-source">Google · 424</div>
+      </div>
+    </div>
+    <div class="rating-badge">
+      <span class="rating-badge-score">4.8</span>
+      <div>
+        <div class="rating-badge-stars">★★★★★</div>
+        <div class="rating-badge-source">TripAdvisor · 447</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-card reveal reveal-delay-2">
+    <div class="review-stars">★ ★ ★ ★ ★</div>
+    <p class="review-text">"Absolutely phenomenal experience. The Wagyu was cooked to perfection and the live Tiramisu was the highlight of our trip to Malta. Liz was an incredible host — made us feel like family."</p>
+    <div class="review-author">Sarah M.</div>
+    <div class="review-source">TripAdvisor</div>
+  </div>
+
+  <div class="review-card reveal reveal-delay-3">
+    <div class="review-stars">★ ★ ★ ★ ★</div>
+    <p class="review-text">"Without a doubt, the best steakhouse in Malta. Dry-aged ribeye was mind-blowing. Niko recommended the perfect wine pairing. The open kitchen concept adds so much to the atmosphere. Already booked our return."</p>
+    <div class="review-author">Marco R.</div>
+    <div class="review-source">Google</div>
+  </div>
+
+  <div class="review-card reveal reveal-delay-4">
+    <div class="review-stars">★ ★ ★ ★ ★</div>
+    <p class="review-text">"We came for the steak, stayed for the experience. Daniel's service was impeccable — attentive without being intrusive. The beef tartare starter and the T-bone were both exceptional. The ambiance is dark, intimate, and incredibly cool."</p>
+    <div class="review-author">James & Elena</div>
+    <div class="review-source">TripAdvisor</div>
+  </div>
+
+  <div class="review-card reveal reveal-delay-5">
+    <div class="review-stars">★ ★ ★ ★ ★</div>
+    <p class="review-text">"A hidden gem in Paceville. Forget the clubs — THIS is where you want to spend your evening. The wild boar meatballs were divine and the Wagyu… no words. Just go."</p>
+    <div class="review-author">Claudia F.</div>
+    <div class="review-source">Google</div>
+  </div>
+</section>
+
+<!-- Reserve -->
+<section class="reserve" id="reserve">
+  <div class="reserve-content">
+    <div class="section-label reveal">Reservations</div>
+    <h2 class="section-title reveal reveal-delay-1">Your Table<br>Awaits</h2>
+    <p class="reserve-sub reveal reveal-delay-2">
+      Every evening at Primitivo is crafted, never rushed. Reserve your place and let us take care of the rest.
+    </p>
+    <a href="https://eatapp.co/reserve/primitivo-grill-33-triq-paceville-33-saint-julian-s-island-of-malta-stj1012-malta" target="_blank" rel="noopener" class="reserve-cta reveal reveal-delay-3">
+      <span>Reserve Now</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <div class="reserve-info reveal reveal-delay-4">
+      <div class="reserve-info-block">
+        <div class="reserve-info-label">Hours</div>
+        <div class="reserve-info-value">
+          Mon – Sat: 18:30 – 23:30<br>
+          Sunday: 12:30 – 14:30 &<br>18:30 – 23:30
+        </div>
+      </div>
+      <div class="reserve-info-block">
+        <div class="reserve-info-label">Location</div>
+        <div class="reserve-info-value">
+          33, Triq Paceville<br>
+          St. Julian's STJ1012<br>
+          Malta
+        </div>
+      </div>
+      <div class="reserve-info-block">
+        <div class="reserve-info-label">Contact</div>
+        <div class="reserve-info-value">
+          <a href="tel:+35600000000" style="color: var(--cream-dim);">+356 0000 0000</a><br>
+          <a href="https://instagram.com/primitivomalta" target="_blank" rel="noopener" style="color: var(--gold);">@primitivomalta</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reserve-map reveal reveal-delay-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.6!2d14.4908!3d35.9225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e452d3081f40b%3A0x9d7e29b6f0a3c2b8!2sPrimitivo%20Grill!5e0!3m2!1sen!2smt!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="footer-brand">Primitivo Grill</div>
+  <div class="footer-tagline">Bold flavours, rugged vibes, refined taste.</div>
+
+  <div class="footer-links">
+    <a href="#menu" class="footer-link">Menu</a>
+    <a href="#experience" class="footer-link">Experience</a>
+    <a href="#reviews" class="footer-link">Reviews</a>
+    <a href="#reserve" class="footer-link">Reserve</a>
+  </div>
+
+  <div class="footer-social">
+    <a href="https://instagram.com/primitivomalta" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://facebook.com/primitivogrillmalta" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Primitivo Grill. All rights reserved.</div>
+    <div class="footer-hashtag">#CraftedAtPrimitivo</div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════
+   PRIMITIVO GRILL — INTERACTIONS
+   ═══════════════════════════════════════ */
+
+// Page loader
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('pageLoader').classList.add('loaded');
+  }, 600);
+});
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+  lastScroll = y;
+}, { passive: true });
+
+// Ember particles
+function createEmbers() {
+  const field = document.getElementById('emberField');
+  const count = window.innerWidth < 640 ? 12 : 20;
+
+  for (let i = 0; i < count; i++) {
+    const ember = document.createElement('div');
+    ember.classList.add('ember');
+    ember.style.left = Math.random() * 100 + '%';
+    ember.style.bottom = '-10px';
+    ember.style.width = (1 + Math.random() * 3) + 'px';
+    ember.style.height = ember.style.width;
+    ember.style.animationDuration = (4 + Math.random() * 8) + 's';
+    ember.style.animationDelay = (Math.random() * 6) + 's';
+    ember.style.opacity = 0;
+    field.appendChild(ember);
+  }
+}
+createEmbers();
+
+// Scroll reveal with IntersectionObserver
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Parallax on hero (subtle, performance-friendly)
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      const hero = document.querySelector('.hero-content');
+      if (y < window.innerHeight) {
+        hero.style.transform = `translateY(${y * 0.15}px)`;
+        hero.style.opacity = 1 - (y / window.innerHeight) * 0.6;
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
