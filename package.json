@@ -1,0 +1,27 @@
+{
+  "name": "primitivo-grill",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "seed": "npx tsx sanity/seed.ts"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^1",
+    "@sanity/vision": "^3",
+    "next": "16.2.1",
+    "next-sanity": "^9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sanity": "^3",
+    "styled-components": "^6.3.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
