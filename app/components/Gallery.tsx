@@ -3,18 +3,26 @@ interface GalleryItemData {
   label: string
   order: number
   image?: { asset?: { url: string } }
+  localImage?: string
+  objectPosition?: string
 }
 
 interface GalleryProps {
   items: GalleryItemData[]
 }
 
-const placeholderGradients = [
-  'linear-gradient(135deg, #1a1008, #2a1a0a 30%, #3d2511 60%, #1a0f06)',
-  'linear-gradient(160deg, #0f0a06, #2a1a0a 40%, #1a100a)',
-  'linear-gradient(200deg, #1a1510, #301e10 50%, #0f0a06)',
-  'linear-gradient(135deg, #0d0906, #251508 40%, #1a0f08)',
-  'linear-gradient(180deg, #1a1208, #2a180a 50%, #0f0906)',
+const fallbackImages: { src: string; position: string }[] = [
+  { src: '/images/interior-diningroom-dryaging.jpg', position: 'center 40%' },
+  { src: '/images/food-tartare-dryaging-steak.jpg', position: 'center top' },
+  { src: '/images/food-risotto-dryaging-cabinet.jpg', position: 'right top' },
+  { src: '/images/food-steaks-mash-berry.jpg', position: 'center top' },
+  { src: '/images/food-tartare-steak-bread.jpg', position: 'left top' },
+  { src: '/images/food-cured-meats-burrata-carpaccio.jpg', position: 'center top' },
+  { src: '/images/food-risotto-tartare-steak-dessert.jpg', position: 'center top' },
+  { src: '/images/food-meat-platter-tartare-fries.jpg', position: 'left top' },
+  { src: '/images/food-tartare-braised-dessert.jpg', position: 'center top' },
+  { src: '/images/food-tartare-salad-table.jpg', position: 'center top' },
+  { src: '/images/food-steak-filet-winesetting.jpg', position: 'center center' },
 ]
 
 export default function Gallery({ items }: GalleryProps) {
@@ -26,24 +34,28 @@ export default function Gallery({ items }: GalleryProps) {
       </h2>
 
       <div className="gallery-grid">
-        {items.map((item, i) => (
-          <div key={item._id} className={`gallery-item reveal ${i > 0 ? `reveal-delay-${i}` : ''}`}>
-            {item.image?.asset?.url ? (
+        {items.map((item, i) => {
+          const fb = fallbackImages[i % fallbackImages.length]
+          const imgSrc = item.image?.asset?.url || fb.src
+          const objPos = fb.position
+
+          return (
+            <div key={item._id} className={`gallery-item reveal ${i > 0 ? `reveal-delay-${i}` : ''}`}>
               <img
-                src={item.image.asset.url}
+                src={imgSrc}
                 alt={item.label}
                 className="gallery-placeholder"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: objPos,
+                }}
               />
-            ) : (
-              <div
-                className="gallery-placeholder"
-                style={{ background: placeholderGradients[i % placeholderGradients.length] }}
-              />
-            )}
-            <div className="gallery-item-label">{item.label}</div>
-          </div>
-        ))}
+              <div className="gallery-item-label">{item.label}</div>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

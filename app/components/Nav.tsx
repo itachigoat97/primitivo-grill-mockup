@@ -5,7 +5,7 @@ interface NavProps {
 export default function Nav({ reservationUrl }: NavProps) {
   return (
     <nav className="nav" id="nav">
-      <div className="nav-logo">Primitivo</div>
+      <div className="nav-logo">Primitivo Grill</div>
       <a href={reservationUrl} target="_blank" rel="noopener" className="nav-reserve">
         Reserve
       </a>

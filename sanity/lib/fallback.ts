@@ -94,11 +94,14 @@ export const fallbackData = {
     },
   ],
   gallery: [
-    { _id: 'gal-1', label: 'The Open Kitchen', order: 1 },
-    { _id: 'gal-2', label: 'Wagyu Selection', order: 2 },
-    { _id: 'gal-3', label: 'Live Tiramisu', order: 3 },
-    { _id: 'gal-4', label: 'Dry-Aged Cuts', order: 4 },
-    { _id: 'gal-5', label: 'The Atmosphere', order: 5 },
+    { _id: 'gal-1', label: 'The Dining Room', order: 1 },
+    { _id: 'gal-2', label: 'Tartare & Dry-Aged', order: 2 },
+    { _id: 'gal-3', label: 'Dry-Aging Cabinet', order: 3 },
+    { _id: 'gal-4', label: 'Premium Steaks', order: 4 },
+    { _id: 'gal-5', label: 'Tartare & Fresh Bread', order: 5 },
+    { _id: 'gal-6', label: 'Cured Meats & Burrata', order: 6 },
+    { _id: 'gal-7', label: 'Risotto & Desserts', order: 7 },
+    { _id: 'gal-8', label: 'Meat Platter', order: 8 },
   ],
   reviews: [
     {
